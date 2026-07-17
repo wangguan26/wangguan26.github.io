@@ -2,6 +2,7 @@ const publications = [
   {
     venue: "ACL 2026 · Main Conference",
     title: "More Thinking, Less Talking: Internalizing Deliberative Safety into LLM Parameters",
+    authors: "Guan Wang, Xuehai Tang, Biyu Zhou, Jizhong Han, Songlin Hu",
     summary:
       "提出 HIAR，将显式安全思维链分层内化到低秩 FFN 参数中，在单次前向传播中完成隐式安全推理；相较强基线，攻击成功率降低约 43%。",
     tag: "Safety Reasoning · Parameter Internalization",
@@ -11,6 +12,7 @@ const publications = [
   {
     venue: "ACL 2026 · Main Conference",
     title: "Resolving the Security-Auditability Dilemma with Auditable Latent Chain-of-Thought Alignment",
+    authors: "Guan Wang, Biyu Zhou, Xuehai Tang, Jizhong Han, Songlin Hu",
     summary:
       "提出 ALCA，将安全推理迁移至连续潜空间，并通过受控 Self-Decoding 恢复可审计文本，在鲁棒性、审计能力与推理效率之间取得平衡。",
     tag: "Latent CoT · Robust Alignment",
@@ -23,6 +25,7 @@ const publications = [
     summary:
       "揭示安全思维链中的事后合理化现象，并通过反事实数据与时序一致性约束增强安全推理的因果性。",
     tag: "Causal Safety Reasoning",
+    href: "/paper/Pretending_to_Think.pdf",
   },
   {
     venue: "EMNLP 2026 · Under Review",
@@ -30,6 +33,7 @@ const publications = [
     summary:
       "从安全梯度的层间分布解释浅层对齐脆弱性，引导安全能力向模型脆弱层迁移，同时控制通用能力损失。",
     tag: "Mechanistic Alignment",
+    href: "/paper/From_Shallow_Alignment.pdf",
   },
   {
     venue: "EMNLP 2026 · Under Review",
@@ -37,6 +41,7 @@ const publications = [
     summary:
       "以神经元回路拓扑解释安全对齐的局部失效与整体能力崩溃，并探索从脆弱单链到鲁棒网状结构的对齐路径。",
     tag: "Neuron Circuit · Interpretability",
+    href: "/paper/From_Chain_to_Mesh.pdf",
   },
   {
     venue: "USENIX Security · Pre-submission",
@@ -155,8 +160,8 @@ export default function Home() {
           <a href="#projects">项目</a>
           <a href="#experience">经历</a>
         </nav>
-        <a className="header-cta" href="mailto:wangguan@iie.ac.cn">
-          联系我 <span aria-hidden="true">↗</span>
+        <a className="header-cta" href="#contact">
+          联系我 <span aria-hidden="true">↓</span>
         </a>
       </header>
 
@@ -183,6 +188,14 @@ export default function Home() {
               rel="noreferrer"
             >
               中文简历 <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              className="button button-secondary"
+              href="https://scholar.google.com/citations?user=Ajqj2K4AAAAJ&hl=en"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Google Scholar <span aria-hidden="true">↗</span>
             </a>
           </div>
           <div className="availability">
@@ -260,6 +273,7 @@ export default function Home() {
                 </div>
                 <div className="paper-content">
                   <h3>{paper.title}</h3>
+                  {paper.authors && <p className="paper-authors">{paper.authors}</p>}
                   <p>{paper.summary}</p>
                   <span className="paper-tag">{paper.tag}</span>
                 </div>
@@ -362,14 +376,23 @@ export default function Home() {
           <h2>一起构建更可靠、<br />更可解释的大模型。</h2>
         </div>
         <div className="contact-links">
-          <a href="mailto:wangguan@iie.ac.cn">
+          <div className="contact-item">
             <span>EMAIL</span>
             <strong>wangguan@iie.ac.cn</strong>
-            <b aria-hidden="true">↗</b>
-          </a>
+            <b aria-hidden="true">可复制</b>
+          </div>
           <a href="https://github.com/wangguan26" target="_blank" rel="noreferrer">
             <span>GITHUB</span>
             <strong>github.com/wangguan26</strong>
+            <b aria-hidden="true">↗</b>
+          </a>
+          <a
+            href="https://scholar.google.com/citations?user=Ajqj2K4AAAAJ&hl=en"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>SCHOLAR</span>
+            <strong>Google Scholar · Guan Wang</strong>
             <b aria-hidden="true">↗</b>
           </a>
           <a
